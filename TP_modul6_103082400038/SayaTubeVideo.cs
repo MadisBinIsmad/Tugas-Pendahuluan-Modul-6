@@ -27,7 +27,7 @@ namespace TP_modul6_103082400038
         public void IncreasePlayCount(int jumlah)
         {
             // precondition
-            if (jumlah > 1000)
+            if (jumlah > 10000000)
             {
                 throw new ArgumentException("Penambahan play count maksimal 1000");
             }

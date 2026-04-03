@@ -10,13 +10,13 @@ class Program
             SayaTubeVideo video = new SayaTubeVideo("Tutorial Design By Contract – Dimas");
 
             // test
-            video.IncreasePlayCount(1000);
+            video.IncreasePlayCount(5000000);
             video.PrintVideoDetails();
 
           
             for (int i = 0; i < 100; i++)
             {
-                video.IncreasePlayCount(1000);
+                video.IncreasePlayCount(10000000);
             }
         }
         catch (Exception ex)
