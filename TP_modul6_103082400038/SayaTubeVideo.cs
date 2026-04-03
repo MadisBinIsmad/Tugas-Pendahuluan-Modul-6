@@ -12,15 +12,37 @@ namespace TP_modul6_103082400038
 
         public SayaTubeVideo(string title)
         {
+            // ini precondition
+            if (title == null || title.Length > 100)
+            {
+                throw new ArgumentException("Judul tidak boleh null dan maksimal 100 karakter");
+            }
+
             Random random = new Random();
-            this.id = random.Next(10000, 99999); 
+            this.id = random.Next(10000, 99999);
             this.title = title;
             this.playCount = 0;
         }
 
         public void IncreasePlayCount(int jumlah)
         {
-            playCount += jumlah;
+            // precondition
+            if (jumlah > 1000)
+            {
+                throw new ArgumentException("Penambahan play count maksimal 1000");
+            }
+
+            try
+            {
+                checked
+                {
+                    playCount += jumlah;
+                }
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Terjadi overflow pada play count!");
+            }
         }
 
         public void PrintVideoDetails()
@@ -31,3 +53,4 @@ namespace TP_modul6_103082400038
         }
     }
 }
+
